@@ -1,0 +1,62 @@
+<div class="row">
+    <div class="col-md-8">
+      <div class="card card-user">
+        <div class="card-header">
+          <h5 class="card-title">Add Feedback</h5>
+        </div>
+        <div class="card-body">
+          <form [formGroup]="feedbackForm" (ngSubmit)="addFeedback()">
+            <div class="row">
+              <div class="col-md-5 pr-1">
+                <div class="form-group">
+                  <label>Name</label>
+                  <input type="text" formControlName="name" class="form-control" placeholder="Name">
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-5 pr-1">
+                <div class="form-group">
+                  <label>Description</label>
+                  <textarea type="text" formControlName="description" class="form-control" placeholder="Description"></textarea>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="update ml-auto mr-auto">
+                <button type="submit" class="btn btn-primary btn-round">Add Feedback</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card">
+          <div class="card-header">
+            <h4 class="card-title">Added Feedbacks</h4>
+          </div>
+          <div class="card-body">
+            <ul class="list-unstyled team-members">
+              <li *ngFor="let feedback of feedbacks">
+                <div class="row">
+                  <div class="col-md-2 col-2">
+                  </div>
+                  <div class="col-md-7 col-7">
+                    {{feedback.name}}
+                    <br />
+                    <span class="text-success">
+                      <small>{{feedback.name}}</small>
+                    </span>
+                  </div>
+                  <div class="col-md-3 col-3 text-right">
+                    <button class="btn btn-sm btn-outline-success btn-round btn-icon"><i class="fa fa-envelope"></i></button>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+  </div>
+  

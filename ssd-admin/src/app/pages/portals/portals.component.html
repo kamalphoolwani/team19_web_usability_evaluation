@@ -1,0 +1,88 @@
+<div class="row">
+    <div class="col-md-6">
+      <div class="card card-user">
+        <div class="card-header">
+          <h5 class="card-title">Add Portal</h5>
+        </div>
+        <div class="card-body">
+          <form [formGroup]="portalForm" (ngSubmit)="addPortal()">
+            <div class="row">
+              <div class="col-md-5 pr-1">
+                <div class="form-group">
+                  <label>Name</label>
+                  <input type="text" formControlName="name" class="form-control" placeholder="Name">
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-5 pr-1">
+                <div class="form-group">
+                  <label>Portal Url</label>
+                  <input type="text" formControlName="testPortalUrl" class="form-control" placeholder="Url">
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-5 pr-1">
+                <div class="form-group">
+                  <label>Stakeholder Name</label>
+                  <input type="text" formControlName="stakeHolderName" class="form-control" placeholder="Stakeholder Name">
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-5 pr-1">
+                <div class="form-group">
+                  <label>Stakeholder Email</label>
+                  <input type="text" formControlName="stakeHolderEmail" class="form-control" placeholder="Stakeholder Email">
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-5 pr-1">
+                <div class="form-group">
+                  <label>Check List</label>
+                  <input type="text" formControlName="checkList" class="form-control" placeholder="Check List">
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="update ml-auto mr-auto">
+                <button type="submit" class="btn btn-primary btn-round">Add Portal</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6">
+        <div class="card">
+          <div class="card-header">
+            <h4 class="card-title">Added Portals</h4>
+          </div>
+          <div class="card-body">
+            <ul class="list-unstyled team-members">
+              <li *ngFor="let portal of portals">
+                <div class="row">
+                  <div class="col-md-2 col-2">
+                  </div>
+                  <div class="col-md-7 col-7">
+                    {{portal.name}}
+                    <br />
+                    <span class="text-success">
+                      <small>{{portal.testPortalUrl}}</small>
+                    </span>
+                  </div>
+                  <div class="col-md-3 col-3 text-right">
+                    <a href="assets/websites/sample.html" target="_blank">
+                      <button class="btn btn-sm btn-outline-success btn-round btn-icon"><i class="fa fa-rocket"></i></button>View Heatmap
+                    </a>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+  </div>
+  

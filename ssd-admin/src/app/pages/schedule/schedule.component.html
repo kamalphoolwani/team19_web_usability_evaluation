@@ -1,0 +1,78 @@
+<div class="row">
+    <div class="col-md-8">
+      <div class="card card-user">
+        <div class="card-header">
+          <h5 class="card-title">Add Schedule</h5>
+        </div>
+        <div class="card-body">
+          <form [formGroup]="scheduleForm" (ngSubmit)="addSchedule()">
+            <div class="row">
+              <div class="col-md-5 pr-1">
+                <div class="form-group">
+                  <label>Viewer Name</label>
+                  <input type="text" formControlName="viewerName" class="form-control" placeholder="viewer name">
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-5 pr-1">
+                <div class="form-group">
+                  <label>Viewer Email</label>
+                  <input type="text" formControlName="viewerEmail" class="form-control" placeholder="viewer email">
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-5 pr-1">
+                <div class="form-group">
+                  <label>Start date time</label>
+                  <input type="datetime-local" formControlName="startDateTime" class="form-control" placeholder="start date time">
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-5 pr-1">
+                <div class="form-group">
+                  <label>Description</label>
+                  <textarea formControlName="description" class="form-control" placeholder="description"></textarea>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="update ml-auto mr-auto">
+                <button type="submit" class="btn btn-primary btn-round">Add Schedule</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card">
+          <div class="card-header">
+            <h4 class="card-title">Added Schedule</h4>
+          </div>
+          <div class="card-body">
+            <ul class="list-unstyled team-members">
+              <li *ngFor="let schedule of schedules">
+                <div class="row">
+                  <div class="col-md-2 col-2">
+                  </div>
+                  <div class="col-md-7 col-7">
+                    {{schedule.viewerName}}
+                    <br />
+                    <span class="text-success">
+                      <small>{{schedule.viewerEmail}}</small>
+                    </span>
+                  </div>
+                  <div class="col-md-3 col-3 text-right">
+                    <button class="btn btn-sm btn-outline-success btn-round btn-icon"><i class="fa fa-envelope"></i></button>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+  </div>
+  

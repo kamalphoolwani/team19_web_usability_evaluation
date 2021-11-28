@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    </head>
+<body id="heatmapContainer">
+<div id="samplebody">
+<h1>The button Element</h1>
+
+<button type="button" id="b1">Button b1</button>
+<button type="button" id="b2">Button b2</button>
+<button type="button" id="b3">Button b3</button>
+<input type="text" id="fname" name="fname">
+<input type="textarea" id="w3review" name="w3review" rows="4" cols="50">
+<div id="div1">
+
+</div>
+<div id="div2">
+    <br>
+    <br>
+    <h3>Home</h3>
+    <br>
+    <br>
+</div>
+<div id="div3">
+    <br>
+    <br>
+    <h3>About</h3>
+    <br>
+    <br>
+</div>
+<div id="div4">
+    <br>
+    <br>
+    <h3>History</h3>
+    <br>
+    <br>
+</div>
+<div id="div5">
+    <br>
+    <br>
+    <h3>Achievements</h3>
+    <br>
+    <br>
+</div>
+<br>
+<br>
+<br>
+<h3>End</h3>
+</div>
+<button onclick="finishHeatMap()">Finish HeatMap</button>
+</body>
+<footer>
+
+</footer>
+
+<script>
+    function printMousePos(event) {        
+        const url = 'https://projectssdapiadmin20211126215408.azurewebsites.net/api/clickevent/addclickevent';
+        const data = {
+            'portalId' : 1,
+            'xPos' : event.clientX,
+            'yPos' : event.clientY,
+            'intensity' : 1000
+        };
+
+        const other_params = {
+            headers : { "content-type" : "application/json; charset=UTF-8" },
+            body : JSON.stringify(data),
+            method : "POST"
+        };
+
+        fetch(url, other_params)
+            .then(function(response) {
+                if (response.ok) {
+                    return true;
+                } else {
+                    cosole.log("Could not reach the API: " + response.statusText);
+                }
+            }).then(function(data) {
+                console.log("data saved");
+            }).catch(function(error) {
+                console.log("data failed");
+            });
+        return true;
+    }
+
+    document.addEventListener("click", printMousePos);
+</script>
+</html>
