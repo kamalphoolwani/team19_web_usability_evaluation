@@ -5,13 +5,20 @@ Kindly Visit this link to visit our website:
 
 For Website walkthrough visit the link : https://www.youtube.com/watch?v=_B8nDTR9jR0
 
+## Prerequisites and Installation
+```
+Install NodeJs from NodeJs Official Page.
+Open Terminal
+Go to your file project
+Run in terminal: npm install -g @angular/cli
+```
+
 ## To Run locally:
 ```
 * npm install
 * ng serve
+Navigate to: http://localhost:4200/
 ```
-
-
 
 ## api links
 
