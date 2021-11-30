@@ -2,6 +2,15 @@
 
 We have deployed our website in Azure
 Kindly Visit this link to visit our website: 
+* For admin page
+```
+https://adithyasai.github.io/ssdadmin/#/portals
+```
+* For participant page
+```
+https://adithyasai.github.io/ssdmain/
+```
+
 
 For Website walkthrough visit the link : https://www.youtube.com/watch?v=_B8nDTR9jR0
 
